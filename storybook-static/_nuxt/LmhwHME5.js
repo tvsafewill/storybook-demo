@@ -1,0 +1,1 @@
+import{c as o,o as r}from"./DY6LMajd.js";import{_ as s}from"./DlAUqK2U.js";const e={};function t(n,c){return r(),o("hr")}const d=s(e,[["render",t]]);e.__docgenInfo={displayName:"ProseHr",description:"",tags:{},sourceFiles:["/Users/tantungvo/dev/storybook-demo/nuxt-primevue-app/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue"]};export{d as default};

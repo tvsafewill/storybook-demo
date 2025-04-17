@@ -1,0 +1,22 @@
+import{B as f,W as c}from"./DqbVwyie.js";import m from"./B60zhWAS.js";import{s as h}from"./-44iJlvR.js";import{j as y,c as p,o as s,F as g,x as v,a as T,z as I,n as k,m as b}from"./DY6LMajd.js";import"./Be1fzYNM.js";import"./BqAuszHy.js";import"./xQwSG8Qu.js";var x=({dt:e})=>`
+.p-inputotp {
+    display: flex;
+    align-items: center;
+    gap: ${e("inputotp.gap")};
+}
+
+.p-inputotp-input {
+    text-align: center;
+    width: ${e("inputotp.input.width")};
+}
+
+.p-inputotp-input.p-inputtext-sm {
+    text-align: center;
+    width: ${e("inputotp.input.sm.width")};
+}
+
+.p-inputotp-input.p-inputtext-lg {
+    text-align: center;
+    width: ${e("inputotp.input.lg.width")};
+}
+`,w={root:"p-inputotp p-component",pcInputText:"p-inputotp-input"},N=f.extend({name:"inputotp",style:x,classes:w}),P={name:"BaseInputOtp",extends:h,props:{readonly:{type:Boolean,default:!1},tabindex:{type:Number,default:null},length:{type:Number,default:4},mask:{type:Boolean,default:!1},integerOnly:{type:Boolean,default:!1}},style:N,provide:function(){return{$pcInputOtp:this,$parentInstance:this}}},B={name:"InputOtp",extends:P,inheritAttrs:!1,emits:["change","focus","blur"],data:function(){return{tokens:[]}},watch:{modelValue:{immediate:!0,handler:function(t){this.tokens=t?t.split(""):new Array(this.length)}}},methods:{getTemplateAttrs:function(t){return{value:this.tokens[t]}},getTemplateEvents:function(t){var n=this;return{input:function(r){return n.onInput(r,t)},keydown:function(r){return n.onKeyDown(r)},focus:function(r){return n.onFocus(r)},blur:function(r){return n.onBlur(r)},paste:function(r){return n.onPaste(r)}}},onInput:function(t,n){this.tokens[n]=t.target.value,this.updateModel(t),t.inputType==="deleteContentBackward"?this.moveToPrev(t):(t.inputType==="insertText"||t.inputType==="deleteContentForward"||c()&&t instanceof CustomEvent)&&this.moveToNext(t)},updateModel:function(t){var n=this.tokens.join("");this.writeValue(n,t),this.$emit("change",{originalEvent:t,value:n})},moveToPrev:function(t){var n=this.findPrevInput(t.target);n&&(n.focus(),n.select())},moveToNext:function(t){var n=this.findNextInput(t.target);n&&(n.focus(),n.select())},findNextInput:function(t){var n=t.nextElementSibling;if(n)return n.nodeName==="INPUT"?n:this.findNextInput(n)},findPrevInput:function(t){var n=t.previousElementSibling;if(n)return n.nodeName==="INPUT"?n:this.findPrevInput(n)},onFocus:function(t){t.target.select(),this.$emit("focus",t)},onBlur:function(t){this.$emit("blur",t)},onClick:function(t){setTimeout(function(){return t.target.select()},1)},onKeyDown:function(t){if(!(t.ctrlKey||t.metaKey))switch(t.code){case"ArrowLeft":this.moveToPrev(t),t.preventDefault();break;case"ArrowUp":case"ArrowDown":t.preventDefault();break;case"Backspace":t.target.value.length===0&&(this.moveToPrev(t),t.preventDefault());break;case"ArrowRight":this.moveToNext(t),t.preventDefault();break;case"Enter":case"NumpadEnter":case"Tab":break;default:(this.integerOnly&&!(t.code!=="Space"&&Number(t.key)>=0&&Number(t.key)<=9)||this.tokens.join("").length>=this.length&&t.code!=="Delete")&&t.preventDefault();break}},onPaste:function(t){var n=t.clipboardData.getData("text");if(n.length){var u=n.substring(0,this.length);(!this.integerOnly||!isNaN(u))&&(this.tokens=u.split(""),this.updateModel(t))}t.preventDefault()}},computed:{inputMode:function(){return this.integerOnly?"numeric":"text"},inputType:function(){return this.mask?"password":"text"}},components:{OtpInputText:m}};function D(e,t,n,u,r,i){var l=y("OtpInputText");return s(),p("div",b({class:e.cx("root")},e.ptmi("root")),[(s(!0),p(g,null,v(e.length,function(a){return T(e.$slots,"default",{key:a,events:i.getTemplateEvents(a-1),attrs:i.getTemplateAttrs(a-1),index:a},function(){return[I(l,{value:r.tokens[a-1],type:i.inputType,class:k(e.cx("pcInputText")),name:e.$formName,inputmode:i.inputMode,variant:e.variant,readonly:e.readonly,disabled:e.disabled,size:e.size,invalid:e.invalid,tabindex:e.tabindex,unstyled:e.unstyled,onInput:function(d){return i.onInput(d,a-1)},onFocus:t[0]||(t[0]=function(o){return i.onFocus(o)}),onBlur:t[1]||(t[1]=function(o){return i.onBlur(o)}),onPaste:t[2]||(t[2]=function(o){return i.onPaste(o)}),onKeydown:t[3]||(t[3]=function(o){return i.onKeyDown(o)}),onClick:t[4]||(t[4]=function(o){return i.onClick(o)}),pt:e.ptm("pcInputText")},null,8,["value","type","class","name","inputmode","variant","readonly","disabled","size","invalid","tabindex","unstyled","onInput","pt"])]})}),128))],16)}B.render=D;export{B as default};
