@@ -1,0 +1,28 @@
+# Scratchpad
+
+## Task: Initialize Nuxt 3 + PrimeVue 4 App
+
+[X] 1. Initialize Nuxt 3 app using `nuxi`.
+[X] 2. Install PrimeVue 4 dependencies (`primevue`, `primeicons`, `primeflex`, `@primevue/nuxt-module`).
+[X] 3. Configure PrimeVue module in `nuxt.config.ts`.
+[X]   3a. Restart dev server to generate types.
+[X] 4. Import PrimeVue theme CSS.
+[X] 5. Create story for `CustomSelectButton.vue`.
+[X] 6. Remind user to run Storybook.
+[X] 7. Run the development server.
+
+## Task: Setup Storybook Visual Test Runner
+
+[X] 1. Check `package.json` for test runner dependencies (`@storybook/test-runner`, `@storybook/jest`, `@storybook/testing-library`).
+[X] 2. Install missing dependencies (if any).
+[X] 3. Ensure `test-storybook` script exists in `package.json`.
+[X] 4. Add interaction test (`play` function) to `ProductForm.stories.ts`.
+[X] 5. Explain how to run the test runner.
+
+## Task: Create User Form
+
+[X] 1. Create `UserForm.vue` component.
+[X] 2. Add fields (Role, Name, Email) using `CustomSelectButton` (top) and `InputText`.
+[X] 3. Implement basic submit logic and display submitted data.
+[X] 4. Style the form similarly to `ProductForm`.
+[X] 5. Create story file `UserForm.stories.ts`.
